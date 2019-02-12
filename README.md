@@ -1,47 +1,76 @@
 # InterpreterProject
-
 Project
 
-The following defines a simple language, in which a program consists of assignments and each variable is assumed to be of the integer type. For the sake of simplicity, only operators that give integer values are included. The interpreter is able to do the following for a given program:
+The following defines a simple language, in which a program consists of 
+assignments and each variable is assumed to be of the integer type. 
+For the sake of simplicity, only operators that give integer values are included. 
+An interpreter in Python is able to do the following for a given program:
 
-detect syntax errors
-report uninitialized variables
-perform the assignments if there is no error and print out the values of all the variables after all the assignments are done.
+1. to detect syntax errors
+2. to report uninitialized variables
+3. to perform the assignments if there is no error and print out the values of  all the variables after all the assignments are done
 
-Program: Assignment*
 
-Assignment: Identifier = Exp;
+The Grammar
+---------------
+ Program:
+	Assignment*
 
-Exp: Exp + Term | Exp - Term | Term
+Assignment:
+	Identifier = Exp;
 
-Term: Term * Fact | Fact
+Exp: 
+	Exp + Term | Exp - Term | Term
 
-Fact: ( Exp ) | - Fact | + Fact | Literal | Identifier
+Term:
+	Term * Fact  | Fact
 
-Identifier: Letter [Letter | Digit]*
+Fact:
+	( Exp ) | - Fact | + Fact | Literal | Identifier
 
-Letter: a|...|z|A|...|Z|_
+Identifier:
+     	Letter [Letter | Digit]*
 
-Literal: 0 | NonZeroDigit Digit*
+Letter:
+	a|...|z|A|...|Z|_
 
-NonZeroDigit: 1|...|9
+Literal:
+	0 | NonZeroDigit Digit*
+		
+NonZeroDigit:
+	1|...|9
 
-Digit: 0|1|...|9
+Digit:
+	0|1|...|9
 
 Sample inputs and outputs
 
-Input 1 x = 001;
+Input 1
+x = 001;
 
-Output 1 error
+Output 1
+error
 
-Input 2 x_2 = 0;
+Input 2
+x_2 = 0;
 
-Output 2 error
+Output 2
+error
 
-Input 3 x = 0 y = x; z = ---(x+y);
+Input 3
+x = 0
+y = x;
+z = ---(x+y);
 
-Output 3 error
+Output 3
+error
 
-Input 4 x = 1; y = 2; z = ---(x+y)*(x+-y);
+Input 4
+x = 1;
+y = 2;
+z = ---(x+y)*(x+-y);
 
-Output 4 x = 1 y = 2 z = 3
+Output 4
+x = 1
+y = 2
+z = 3
