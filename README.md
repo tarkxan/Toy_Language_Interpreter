@@ -4,9 +4,9 @@ Project
 
 The following defines a simple language, in which a program consists of assignments and each variable is assumed to be of the integer type. For the sake of simplicity, only operators that give integer values are included. The interpreter is able to do the following for a given program:
 
-    detect syntax errors
-    report uninitialized variables
-    perform the assignments if there is no error and print out the values of all the variables after all the assignments are done.
+detect syntax errors
+report uninitialized variables
+perform the assignments if there is no error and print out the values of all the variables after all the assignments are done.
 
 Program: Assignment*
 
